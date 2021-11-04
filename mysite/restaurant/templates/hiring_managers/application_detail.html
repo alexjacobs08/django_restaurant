@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Restaurant: {{ job_posting.restaurant_location.restaurant.name }}</h3>
+<h3>Location: {{ job_posting.restaurant_location.location }}</h3>
+<h3>Position: {{ job_posting.position }}</h3>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Resume</th>
+    <th>Email</th>
+    <th>Approve</th>
+    <th>Reject</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for application in applications %}
+  <tr>
+    <td>{{application.first_name}} {{application.last_name}}</td>
+    <td>{{application.resume}}</td>
+    <td>{{application.email}}</td>
+    <td><a href="{% url 'application_approve' application.id %}">approve</a></td>
+    <td><a href="{% url 'application_reject' application.id %}">reject</a></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

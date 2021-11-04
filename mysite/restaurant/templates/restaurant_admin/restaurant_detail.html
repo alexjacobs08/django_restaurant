@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h1 align="left">{{ restaurant.name }}</h1>
+
+<br>
+<h3 align="left">Restaurant Locations</h3>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Location</th>
+    <th>Hiring Manager</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for location in locations %}
+  <tr>
+    <td>{{ location.location }}</td>
+    <td>{{ location.hiring_manager }}</td>
+    <td><a href="{% url 'restaurant_location_detail' location.id %}">view</a></td>
+    <td><a href="{% url 'restaurant_location_update' location.id %}">edit</a></td>
+    <td><a href="{% url 'restaurant_location_delete' location.id %}">delete</a></td>
+  </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+<br>
+<h1 align="left">Create New Location</h1>
+<form method="post">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-3">
+      {{ form.location|as_crispy_field }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      {{ form.hiring_manager|as_crispy_field }}
+    </div>
+  </div>
+  <input align="left" type="submit" class="btn btn-primary" value="Submit"/>
+</form>
+{% endblock %}

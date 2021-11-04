@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Select a Location for <strong>{{ name }}</strong></h1>
+{% for location in restaurant_locations_list %}
+<a class="btn btn-primary" href="{% url 'hiring_manager_restaurant_detail' location.id %}">{{ location.location }}</a>
+{% endfor %}
+{% endblock %}

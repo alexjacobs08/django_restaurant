@@ -1,0 +1,694 @@
+[
+  {
+    "model": "restaurant.restaurant",
+    "pk": 1,
+    "fields": {
+      "name": "Ricky's Radish Soup",
+      "restaurant_admin": "Rick"
+    }
+  },
+  {
+    "model": "restaurant.restaurant",
+    "pk": 2,
+    "fields": {
+      "name": "Harold's Hummus Palace",
+      "restaurant_admin": "Harold"
+    }
+  },
+  {
+    "model": "restaurant.restaurantlocation",
+    "pk": 1,
+    "fields": {
+      "restaurant": 1,
+      "location": "Charleston",
+      "hiring_manager": "Mickey"
+    }
+  },
+  {
+    "model": "restaurant.restaurantlocation",
+    "pk": 2,
+    "fields": {
+      "restaurant": 1,
+      "location": "New York",
+      "hiring_manager": "Max"
+    }
+  },
+  {
+    "model": "restaurant.restaurantlocation",
+    "pk": 3,
+    "fields": {
+      "restaurant": 2,
+      "location": "Boston",
+      "hiring_manager": "Johnny"
+    }
+  },
+  {
+    "model": "restaurant.restaurantlocation",
+    "pk": 4,
+    "fields": {
+      "restaurant": 2,
+      "location": "Miami",
+      "hiring_manager": "Rich"
+    }
+  },
+  {
+    "model": "restaurant.jobposting",
+    "pk": 1,
+    "fields": {
+      "restaurant_location": 1,
+      "position": "Soup-chef",
+      "date_posted": "2020-02-17",
+      "closed": false
+    }
+  },
+  {
+    "model": "restaurant.jobposting",
+    "pk": 2,
+    "fields": {
+      "restaurant_location": 1,
+      "position": "Server",
+      "date_posted": "2020-02-17",
+      "closed": false
+    }
+  },
+  {
+    "model": "restaurant.jobposting",
+    "pk": 3,
+    "fields": {
+      "restaurant_location": 1,
+      "position": "Dishwasher",
+      "date_posted": "2020-02-17",
+      "closed": true
+    }
+  },
+  {
+    "model": "restaurant.jobposting",
+    "pk": 4,
+    "fields": {
+      "restaurant_location": 3,
+      "position": "Hummus Master",
+      "date_posted": "2020-02-17",
+      "closed": false
+    }
+  },
+  {
+    "model": "restaurant.jobposting",
+    "pk": 5,
+    "fields": {
+      "restaurant_location": 3,
+      "position": "Server",
+      "date_posted": "2020-02-17",
+      "closed": false
+    }
+  },
+  {
+    "model": "restaurant.jobposting",
+    "pk": 6,
+    "fields": {
+      "restaurant_location": 4,
+      "position": "Bartender",
+      "date_posted": "2020-02-17",
+      "closed": false
+    }
+  },
+  {
+    "model": "restaurant.jobposting",
+    "pk": 7,
+    "fields": {
+      "restaurant_location": 4,
+      "position": "Server",
+      "date_posted": "2020-02-17",
+      "closed": false
+    }
+  },
+  {
+    "model": "restaurant.applicant",
+    "pk": 1,
+    "fields": {
+      "job_posting": 1,
+      "date_applied": "2020-02-17",
+      "last_name": "Riddle",
+      "first_name": "Tommy",
+      "email": "tommyR@gmail.com",
+      "resume": "Been making soup for a while now... pretty good at it",
+      "rejected": false
+    }
+  },
+  {
+    "model": "restaurant.applicant",
+    "pk": 2,
+    "fields": {
+      "job_posting": 1,
+      "date_applied": "2020-02-17",
+      "last_name": "Smith",
+      "first_name": "Sarah",
+      "email": "sarahsmith@gmaill.com",
+      "resume": "I was as previous a sous-chef.. similar maybe?",
+      "rejected": false
+    }
+  },
+  {
+    "model": "restaurant.applicant",
+    "pk": 3,
+    "fields": {
+      "job_posting": 4,
+      "date_applied": "2020-02-17",
+      "last_name": "Human",
+      "first_name": "Jake",
+      "email": "humanJ@humanj.com",
+      "resume": "I've got my own domain.. gotta be worth something..",
+      "rejected": false
+    }
+  },
+  {
+    "model": "restaurant.applicant",
+    "pk": 4,
+    "fields": {
+      "job_posting": 2,
+      "date_applied": "2020-02-17",
+      "last_name": "Washout",
+      "first_name": "Tim",
+      "email": "timmytim@gmaill.com",
+      "resume": "Been washing dishes my whole life",
+      "rejected": false
+    }
+  },
+  {
+    "model": "restaurant.applicant",
+    "pk": 5,
+    "fields": {
+      "job_posting": 1,
+      "date_applied": "2020-02-17",
+      "last_name": "Campbell",
+      "first_name": "Amy",
+      "email": "amycampbell@email.com",
+      "resume": "Distant relative to the campbell soup people",
+      "rejected": false
+    }
+  },
+  {
+    "model": "restaurant.applicant",
+    "pk": 6,
+    "fields": {
+      "job_posting": 6,
+      "date_applied": "2020-02-17",
+      "last_name": "Bartender",
+      "first_name": "Barnie",
+      "email": "Bartender@email.net",
+      "resume": "Not my real name--in need of a job though",
+      "rejected": false
+    }
+  },
+  {
+    "model": "restaurant.applicant",
+    "pk": 7,
+    "fields": {
+      "job_posting": 6,
+      "date_applied": "2020-02-17",
+      "last_name": "Jacobs",
+      "first_name": "Alex",
+      "email": "alex.jacobs08@gmail.com",
+      "resume": "Always wanted to be a bartender at a hummus restaurant",
+      "rejected": false
+    }
+  },
+  {
+    "model": "restaurant.applicant",
+    "pk": 8,
+    "fields": {
+      "job_posting": 3,
+      "date_applied": "2020-02-17",
+      "last_name": "Walker",
+      "first_name": "Jimmy",
+      "email": "jimmyj@gmail.gov",
+      "resume": "Washing dishes is my thing",
+      "rejected": false
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "restaurant",
+      "model": "restaurant"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "restaurant",
+      "model": "restaurantlocation"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "restaurant",
+      "model": "jobposting"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "restaurant",
+      "model": "applicant"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "cks3s3my1q66atlytxtvt0h9agxgaroh",
+    "fields": {
+      "session_data": "OGRlMWZlMDdmOTcyODM4MTYyNjNhZDcwNmExZGVkNjBmZDFiY2MwMjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJjNGFkY2QxMDAwN2I3NmYwMDNkNGRjMTU4MzYxODA0M2Y1MjE2Nzk4In0=",
+      "expire_date": "2020-03-03T01:55:29.679Z"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add restaurant",
+      "content_type": 1,
+      "codename": "add_restaurant"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change restaurant",
+      "content_type": 1,
+      "codename": "change_restaurant"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete restaurant",
+      "content_type": 1,
+      "codename": "delete_restaurant"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view restaurant",
+      "content_type": 1,
+      "codename": "view_restaurant"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add restaurant location",
+      "content_type": 2,
+      "codename": "add_restaurantlocation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change restaurant location",
+      "content_type": 2,
+      "codename": "change_restaurantlocation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete restaurant location",
+      "content_type": 2,
+      "codename": "delete_restaurantlocation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view restaurant location",
+      "content_type": 2,
+      "codename": "view_restaurantlocation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add job posting",
+      "content_type": 3,
+      "codename": "add_jobposting"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change job posting",
+      "content_type": 3,
+      "codename": "change_jobposting"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete job posting",
+      "content_type": 3,
+      "codename": "delete_jobposting"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view job posting",
+      "content_type": 3,
+      "codename": "view_jobposting"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add applicant",
+      "content_type": 4,
+      "codename": "add_applicant"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change applicant",
+      "content_type": 4,
+      "codename": "change_applicant"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete applicant",
+      "content_type": 4,
+      "codename": "delete_applicant"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view applicant",
+      "content_type": 4,
+      "codename": "view_applicant"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 5,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 5,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 5,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 5,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 6,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 6,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 6,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 6,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 7,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 7,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 7,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 7,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 8,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 8,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 8,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 8,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 9,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 9,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 9,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 9,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 10,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 10,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 10,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 10,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$180000$bllo26LVoYQh$j3pLCsB6cjVsuswzi/OLNv4EHZIq2V8dk7sBbc2ccdw=",
+      "last_login": "2020-02-18T01:55:29.677Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "admin@example.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2020-02-18T01:55:15.014Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

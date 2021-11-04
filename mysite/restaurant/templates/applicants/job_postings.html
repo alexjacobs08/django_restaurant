@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if not job_postings %}
+<h3 align="center">No jobs are currently posted. Check back soon!</h3>
+{% else %}
+<h1>Job Postings</h1>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Position</th>
+    <th>Restaurant Name</th>
+    <th>Location</th>
+    <th>Date Posted</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for job_posting in job_postings %}
+  <tr>
+    <td>{{ job_posting.position }}</td>
+    <td>{{ job_posting.restaurant_location.restaurant.name}}</td>
+    <td>{{ job_posting.restaurant_location.location }}</td>
+    <td>{{ job_posting.date_posted }}</td>
+    <td><a class="btn btn-success" href="{% url 'application_create' job_posting.id %}">Apply</a></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+{% endblock %}

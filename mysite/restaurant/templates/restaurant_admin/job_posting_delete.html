@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Restaurant Delete</h1>
+<form method="post">
+  {% csrf_token %}
+  <p>Are you sure you want to delete the <strong>{{ job_posting.position }}</strong> position posted at the
+    <strong>{{job_posting.restaurant_location.location }}</strong> location of
+    <strong>{{ job_posting.restaurant_location.restaurant }}</strong>?</p>
+  <input class="btn btn-success" type="submit" value="Yes"/>
+</form>
+<a class="btn btn-danger" href="{% url 'restaurant_location_detail' job_posting.restaurant_location_id %}">No, go
+  back</a>
+{% endblock %}

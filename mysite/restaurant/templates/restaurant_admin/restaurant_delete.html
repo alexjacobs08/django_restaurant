@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Restaurant Delete</h1>
+<form method="post">{% csrf_token %}
+  Are you sure you want to delete <strong>{{ restaurant.name }}</strong> ?</p>
+  <input class="btn btn-primary" type="submit" value="Submit"/>
+</form>
+<a class="btn btn-danger" href="{% url 'restaurant_list' %}">No, go back</a>
+
+{% endblock %}

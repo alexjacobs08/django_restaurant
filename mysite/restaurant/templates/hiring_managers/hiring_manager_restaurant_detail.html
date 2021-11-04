@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h1 align="left">{{ restaurant.restaurant.name }}</h1>
+<h3 align="left">Location: {{restaurant.location}}</h3>
+<h3 align="left">Hiring Manager: {{ restaurant.hiring_manager }} </h3>
+<br>
+<h3 align="left">Open Job Postings</h3>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Position</th>
+    <th>Applicants</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for job_posting in open_job_postings %}
+  <tr>
+    <td>{{ job_posting.position }}</td>
+    <td><a href="{% url 'applications_view' job_posting.id %}">view {{ job_posting.application_count }}</a></td>
+  </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+<h3 align="left">Closed Job Postings</h3>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Position</th>
+    <th>Reopen</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for job_posting in closed_job_postings %}
+  <tr>
+    <td>{{ job_posting.position }}</td>
+    <td><a href="{% url 'hiring_manager_job_posting_reopen' job_posting.id %}">reopen position</a></td>
+  </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}

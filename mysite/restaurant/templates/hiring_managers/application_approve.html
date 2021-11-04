@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Application Approve</h1>
+<form method="post">{% csrf_token %}
+  <p>Are you sure you want to approve <strong>{{ applicant }}'s</strong> application for
+    <strong>{{ job_posting.position }}</strong> at <strong>{{ job_posting.restaurant_location.restaurant }}</strong>
+    in <strong>{{ job_posting.restaurant_location.location }}</strong>?</p>
+  <p>This cannot be undone--an email will be sent.</p>
+  <p>This will also close the position.</p>
+  <input class="btn btn-success" type="submit" value="Yes"/>
+</form>
+<a class="btn btn-danger" href="{% url 'applications_view' job_posting.id %}">No, go back</a>
+
+{% endblock %}

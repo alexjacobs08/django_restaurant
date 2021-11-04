@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Restaurants</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for restaurant in restaurant_list %}
+  <tr>
+    <td>{{ restaurant.name }}</td>
+    <td><a href="{% url 'restaurant_detail' restaurant.id %}">view</a></td>
+    <td><a href="{% url 'restaurant_edit' restaurant.id %}">edit</a></td>
+    <td><a href="{% url 'restaurant_delete' restaurant.id %}">delete</a></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<a class="btn btn-primary" href="{% url 'restaurant_new' %}">Create New Restaurant</a>
+{% endblock %}

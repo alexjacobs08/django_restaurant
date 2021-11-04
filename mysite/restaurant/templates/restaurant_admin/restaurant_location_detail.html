@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1 align="left">{{ restaurant }}</h1>
+<h2 align="left">Location: {{ location.location }}</h2>
+<br>
+<h3 align="left">Open Job Postings</h3>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Position</th>
+    <th>Create Application</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th>Close</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for job_posting in open_job_postings %}
+  <tr>
+    <td>{{ job_posting.position }}</td>
+    <td><a href="{% url 'application_create_manager' job_posting.id %}">create</a></td>
+    <td><a href="{% url 'job_posting_update' job_posting.id %}">edit</a></td>
+    <td><a href="{% url 'job_posting_delete' job_posting.id %}">delete</a></td>
+    <td><a href="{% url 'restaurant_admin_job_posting_close' job_posting.id %}">close</a></td>
+  </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+<h3 align="left">Closed Job Postings</h3>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Position</th>
+    <th>Reopen</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for job_posting in closed_job_postings %}
+  <tr>
+    <td>{{ job_posting.position }}</td>
+    <td><a href="{% url 'restaurant_admin_job_posting_reopen' job_posting.id %}">reopen position</a></td>
+  </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+<br>
+<h1 align="left">Create New job posting</h1>
+<form method="post">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-3">
+      {{ form.position|as_crispy_field }}
+    </div>
+  </div>
+  <input align="left" type="submit" class="btn btn-primary" value="Submit"/>
+</form>
+{% endblock %}
